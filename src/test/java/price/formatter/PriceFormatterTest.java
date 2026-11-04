@@ -39,7 +39,7 @@ public class PriceFormatterTest {
     @Test
     void TestingFormatter4() {
         PriceFormatter formatter = new PriceFormatter();
-        assertEquals("1 €", formatter.formatPrice(10.991));
+        assertEquals("11 €", formatter.formatPrice(10.999));
 
     }
 
