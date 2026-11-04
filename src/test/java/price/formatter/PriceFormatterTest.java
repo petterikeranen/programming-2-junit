@@ -1,5 +1,7 @@
 package price.formatter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
@@ -10,11 +12,41 @@ import org.junit.jupiter.api.Test;
  * readme file.
  */
 public class PriceFormatterTest {
+   
+    @Test
+    void SetUp() {
+        PriceFormatter formatter = new PriceFormatter();
+    }
+
+    
+    @Test
+    void TestingFormatter1() {
+        PriceFormatter formatter = new PriceFormatter();
+        assertEquals("3,14 €", formatter.formatPrice(3.141592653589793));
+    }
 
     @Test
-    void removeThisTestWhenImplementingYourOwnTests() {
+    void TestingFormatter2() {
         PriceFormatter formatter = new PriceFormatter();
+        assertEquals("100 000 €", formatter.formatPrice(100000));
+    }
+    @Test
+    void TestingFormatter3() {
+        PriceFormatter formatter = new PriceFormatter();
+        assertEquals("1 000 €", formatter.formatPrice(1000));
+    }
 
-        fail("Remove this test and implement your own tests for the PriceFormatter class.");
+    @Test
+    void TestingFormatter4() {
+        PriceFormatter formatter = new PriceFormatter();
+        assertEquals("10 €", formatter.formatPrice(10,00));
+
+    }
+
+    @Test
+    void TestingFormatter5() {
+        PriceFormatter formatter = new PriceFormatter();
+        assertEquals("10,22 €", formatter.formatPrice(10,22));
+
     }
 }
